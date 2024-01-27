@@ -1,0 +1,28 @@
+@import '../globals.scss';
+
+.starred {
+  footer {
+    margin-top: 50px;
+
+    .total-price {
+      font-size: 1.8rem;
+    }
+
+    .btn {
+      width: auto;
+      padding: 0 20px;
+      font-size: 0.8rem;
+      background: $red-550;
+      border: none;
+    }
+
+    .back-button {
+      color: $black;
+      background: $grey-200;
+    }
+
+    .back-button:hover {
+      background: $grey-300;
+    }
+  }
+}

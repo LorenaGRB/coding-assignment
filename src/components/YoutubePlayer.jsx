@@ -1,11 +1,14 @@
 import ReactPlayer from 'react-player'
+import { YOUTUBE_URL } from '../constants/links'
 
-const YoutubePlayer = ({ videoKey }) => (<ReactPlayer 
-  className="video-player" 
-  url={`https://www.youtube.com/watch?v=${videoKey}`} 
-  controls={true}
-  playing={true}
-  data-testid="youtube-player"
-/>);
+const YoutubePlayer = ({ videoKey }) => (
+  <ReactPlayer
+    className='video-player'
+    url={`${YOUTUBE_URL}?v=${videoKey}`}
+    controls={true}
+    playing={true}
+    data-testid='youtube-player'
+  />
+)
 
-export default YoutubePlayer;
+export default YoutubePlayer
