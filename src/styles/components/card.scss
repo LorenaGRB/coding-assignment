@@ -1,0 +1,176 @@
+@import '../globals.scss';
+
+.card {
+  position: relative;
+  color: $white;
+  text-align: center;
+  background: transparent;
+  border: none;
+
+  &-wrapper {
+    padding: 0 6px;
+    margin-bottom: 2rem;
+  }
+
+  &.opened {
+    & + .hero-card {
+      display: block;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.1);
+
+    .overlay {
+      opacity: 0.8;
+    }
+
+    .info_panel {
+      display: block;
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 480px) {
+    &:hover {
+      transform: none;
+
+      .overlay {
+        opacity: 0;
+      }
+
+      .info_panel {
+        display: none;
+      }
+    }
+  }
+
+  h6.title {
+    margin-top: 10px;
+    font-size: 0.9rem;
+
+    &.mobile-card {
+      display: none;
+    }
+    @media (max-width: 480px), (hover: none) {
+      display: none;
+
+      &.mobile-card {
+        display: block;
+      }
+    }
+
+    @media (max-width: 720px) {
+      font-size: 0.7rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    &.opened {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 999;
+      width: 100%;
+      height: auto;
+      border: 3px solid $white;
+      border-radius: 5px;
+      transform: none;
+
+      .overlay {
+        opacity: 0.7;
+      }
+      .info_panel {
+        display: block;
+        opacity: 1;
+      }
+
+      h6.title {
+        display: none;
+
+        &.mobile-card {
+          position: absolute;
+          right: 0;
+          bottom: 70%;
+          left: 0;
+          display: block;
+          padding: 19px;
+          font-size: 1.5rem;
+        }
+      }
+
+      button.close {
+        position: absolute;
+        top: 0;
+        right: 0px;
+        z-index: 999;
+        display: block;
+        width: 75px;
+        height: 60px;
+        font-size: 50px;
+        line-height: 20px;
+        color: $white;
+        background: transparent;
+        border: none;
+
+        span {
+          vertical-align: text-top;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 720px) {
+    background-color: transparent;
+  }
+}
+
+button.close {
+  display: none;
+}
+
+.card-body {
+  position: relative;
+  padding: 0;
+
+  &:hover {
+    border: 2px solid $white;
+  }
+}
+.info_panel {
+  padding: 20% 5% 0;
+  color: $white;
+  background: transparent;
+  @media (max-width: 720px) {
+    padding: 8% 5% 0;
+  }
+
+  @media (max-width: 480px) {
+    padding-top: 50%;
+  }
+}
+
+.overlay,
+.info_panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  -webkit-transition: opacity 0.4s ease-in-out;
+  -moz-transition: opacity 0.4s ease-in-out;
+  -ms-transition: opacity 0.4s ease-in-out;
+  -o-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.overlay {
+  color: $white;
+  background-color: $grey-900;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}

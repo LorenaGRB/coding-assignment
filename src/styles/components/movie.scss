@@ -1,0 +1,96 @@
+@import '../globals.scss';
+
+.bi-star:hover {
+  color: $red-500;
+}
+
+.bi-star-fill {
+  margin: 0 5px;
+  color: $red-500;
+}
+
+.movie {
+  &__overview {
+    height: 85px;
+    padding: 5px;
+    margin-bottom: 5px;
+    overflow: scroll;
+    font-size: 0.7rem;
+    line-height: 105%;
+
+    @media (max-width: 720px) {
+      height: 60px;
+      padding: 3px;
+      margin-bottom: 2px;
+    }
+
+    @media (max-width: 480px) {
+      height: 185px;
+      margin-bottom: 40px;
+      font-size: 1rem;
+      line-height: 115%;
+    }
+  }
+  &__year {
+    padding: 0.2rem 0 0.4rem;
+    font-size: 0.7rem;
+    @media (max-width: 480px) {
+      position: absolute;
+      right: 0;
+      bottom: 67%;
+      left: 0;
+      padding: 0 0 10px;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.btn-star {
+  width: 50px;
+  margin: 0 5px;
+  color: $red-500;
+  cursor: pointer;
+  @media (max-width: 520px) {
+    font-size: 25px;
+  }
+}
+.btn {
+  display: block;
+  width: 90%;
+  height: 26px;
+  margin: 8px auto;
+  font-size: 0.6rem;
+  text-align: center;
+
+  @media (max-width: 720px) {
+    height: 20px;
+    padding: 2px 2px;
+    font-size: 0.6rem;
+  }
+
+  @media (max-width: 480px) {
+    margin: 15px auto;
+    height: 35px;
+    font-size: 1rem;
+  }
+
+  &.btn-watch-later {
+    &.blue {
+      color: $white;
+      background-color: $blue-100;
+      border: $blue-100;
+    }
+
+    &:hover {
+      color: $white;
+      background: $blue-100;
+      border-color: $blue-100;
+    }
+  }
+
+  &.btn-dark:hover {
+    color: $white;
+    background: $blue-100;
+    border-color: $blue-100;
+  }
+}
