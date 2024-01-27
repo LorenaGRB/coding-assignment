@@ -11,8 +11,7 @@ const watchLaterSlice = createSlice({
       state.watchLaterMovies = [action.payload, ...state.watchLaterMovies]
     },
     removeFromWatchLater: (state, action) => {
-      const indexOfId = state.watchLaterMovies.findIndex((key) => key.id === action.payload.id)
-      state.watchLaterMovies.splice(indexOfId, 1)
+      state.watchLaterMovies = state.watchLaterMovies.filter((movie) => movie.id !== action.payload.id)
     },
     remveAllWatchLater: (state) => {
       state.watchLaterMovies = []
