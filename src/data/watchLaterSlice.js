@@ -13,7 +13,7 @@ const watchLaterSlice = createSlice({
     removeFromWatchLater: (state, action) => {
       state.watchLaterMovies = state.watchLaterMovies.filter((movie) => movie.id !== action.payload.id)
     },
-    remveAllWatchLater: (state) => {
+    removeAllWatchLater: (state) => {
       state.watchLaterMovies = []
     }
   }

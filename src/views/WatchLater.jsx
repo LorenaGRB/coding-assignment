@@ -3,34 +3,38 @@ import { Link } from 'react-router-dom'
 import watchLaterSlice from '../data/watchLaterSlice'
 import Movie from '../components/Movie'
 import { HOME } from '../constants/routes'
-import '../styles/views/starred.scss'
+import '../styles/views/watchLater.scss'
+import { useCallback } from 'react'
 
 const WatchLater = ({ viewTrailer }) => {
-  const state = useSelector((state) => state)
-  const { watchLater } = state
-  const { remveAllWatchLater } = watchLaterSlice.actions
   const dispatch = useDispatch()
+  const { watchLaterMovies } = useSelector((state) => state.watchLater)
+  const { removeAllWatchLater } = watchLaterSlice.actions
+  const watchLaterIsNotEmpty = watchLaterMovies.length > 0
+
+  const handleRemoveAllWatchLater = useCallback(() => {
+    dispatch(removeAllWatchLater())
+  }, [dispatch, removeAllWatchLater])
 
   return (
-    <div className='starred' data-testid='watch-later-div'>
-      {watchLater.watchLaterMovies.length > 0 && (
-        <div data-testid='watch-later-movies' className='starred-movies'>
+    <div className='watch-later' data-testid='watch-later-div'>
+      {watchLaterIsNotEmpty && (
+        <div data-testid='watch-later-movies'>
           <h6 className='header'>Watch Later List</h6>
           <div className='row'>
-            {watchLater.watchLaterMovies.map((movie) => (
+            {watchLaterMovies.map((movie) => (
               <Movie movie={movie} key={movie.id} viewTrailer={viewTrailer} />
             ))}
           </div>
-
           <footer className='text-center'>
-            <button className='btn btn-primary' onClick={() => dispatch(remveAllWatchLater())}>
+            <button className='btn btn-primary' onClick={handleRemoveAllWatchLater}>
               Empty list
             </button>
           </footer>
         </div>
       )}
 
-      {watchLater.watchLaterMovies.length === 0 && (
+      {!watchLaterIsNotEmpty && (
         <div className='text-center empty-cart'>
           <i className='bi bi-heart' />
           <p>You have no movies saved to watch later.</p>
