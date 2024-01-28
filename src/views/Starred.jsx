@@ -4,6 +4,7 @@ import starredSlice from '../data/starredSlice'
 import Movie from '../components/Movie'
 import { HOME } from '../constants/routes'
 import '../styles/views/starred.scss'
+import Grid from '../components/Grid'
 
 const Starred = ({ viewTrailer }) => {
   const state = useSelector((state) => state)
@@ -16,11 +17,11 @@ const Starred = ({ viewTrailer }) => {
       {starred.starredMovies.length > 0 && (
         <div data-testid='starred-movies' className='starred-movies'>
           <h6 className='header'>Starred movies</h6>
-          <div className='row'>
+          <Grid>
             {starred.starredMovies.map((movie) => (
               <Movie movie={movie} key={movie.id} viewTrailer={viewTrailer} />
             ))}
-          </div>
+          </Grid>
 
           <footer className='text-center'>
             <button className='btn btn-primary' onClick={() => dispatch(clearAllStarred())}>

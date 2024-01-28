@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom'
 import watchLaterSlice from '../data/watchLaterSlice'
 import Movie from '../components/Movie'
 import { HOME } from '../constants/routes'
-import '../styles/views/watchLater.scss'
 import { useCallback } from 'react'
+import Grid from '../components/Grid'
+import '../styles/views/watchLater.scss'
 
 const WatchLater = ({ viewTrailer }) => {
   const dispatch = useDispatch()
@@ -21,11 +22,11 @@ const WatchLater = ({ viewTrailer }) => {
       {watchLaterIsNotEmpty && (
         <div data-testid='watch-later-movies'>
           <h6 className='header'>Watch Later List</h6>
-          <div className='row'>
+          <Grid>
             {watchLaterMovies.map((movie) => (
               <Movie movie={movie} key={movie.id} viewTrailer={viewTrailer} />
             ))}
-          </div>
+          </Grid>
           <footer className='text-center'>
             <button className='btn btn-primary' onClick={handleRemoveAllWatchLater}>
               Empty list

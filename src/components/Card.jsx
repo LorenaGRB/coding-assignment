@@ -10,7 +10,7 @@ const Card = ({ children, imageLink, title }) => {
     setIsOpen(value)
   }
   return (
-    <div className='card-wrapper col-3 col-sm-4 col-md-3 col-lg-3 col-xl-2'>
+    <div className='card-wrapper'>
       <div className={`card ${isOpen}`} onClick={() => handleCardClick('opened')}>
         <div className='card-body'>
           <div className='overlay' />
