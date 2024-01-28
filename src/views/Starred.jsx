@@ -6,9 +6,8 @@ import { HOME } from '../constants/routes'
 import '../styles/views/starred.scss'
 import Grid from '../components/Grid'
 
-const Starred = ({ viewTrailer }) => {
-  const state = useSelector((state) => state)
-  const { starred } = state
+const Starred = () => {
+  const { starred } = useSelector((state) => state)
   const { clearAllStarred } = starredSlice.actions
   const dispatch = useDispatch()
 
@@ -19,7 +18,7 @@ const Starred = ({ viewTrailer }) => {
           <h6 className='header'>Starred movies</h6>
           <Grid>
             {starred.starredMovies.map((movie) => (
-              <Movie movie={movie} key={movie.id} viewTrailer={viewTrailer} />
+              <Movie movie={movie} key={movie.id} />
             ))}
           </Grid>
 

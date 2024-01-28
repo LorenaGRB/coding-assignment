@@ -4,12 +4,12 @@ import starredSlice from '../data/starredSlice'
 import watchLaterSlice from '../data/watchLaterSlice'
 import { IMAGE_URL } from '../constants/links'
 import Card from './Card'
-
+import { useModal } from '../contexts/ModalContext'
 import '../styles/components/movie.scss'
 
-const Movie = ({ movie, viewTrailer, closeCard }) => {
-  const state = useSelector((state) => state)
-  const { starred, watchLater } = state
+const Movie = ({ movie }) => {
+  const { openModal } = useModal()
+  const { starred, watchLater } = useSelector((state) => state)
   const { starMovie, unstarMovie } = starredSlice.actions
   const { addToWatchLater, removeFromWatchLater } = watchLaterSlice.actions
 
@@ -70,7 +70,7 @@ const Movie = ({ movie, viewTrailer, closeCard }) => {
       >
         {isWatchLater ? <i className='bi bi-check'></i> : 'Watch Later'}
       </button>
-      <button type='button' className='btn btn-dark' onClick={() => viewTrailer(movie)}>
+      <button type='button' className='btn btn-dark' onClick={() => openModal(movie)}>
         View Trailer
       </button>
     </Card>

@@ -7,7 +7,7 @@ import { useCallback } from 'react'
 import Grid from '../components/Grid'
 import '../styles/views/watchLater.scss'
 
-const WatchLater = ({ viewTrailer }) => {
+const WatchLater = () => {
   const dispatch = useDispatch()
   const { watchLaterMovies } = useSelector((state) => state.watchLater)
   const { removeAllWatchLater } = watchLaterSlice.actions
@@ -24,7 +24,7 @@ const WatchLater = ({ viewTrailer }) => {
           <h6 className='header'>Watch Later List</h6>
           <Grid>
             {watchLaterMovies.map((movie) => (
-              <Movie movie={movie} key={movie.id} viewTrailer={viewTrailer} />
+              <Movie movie={movie} key={movie.id} />
             ))}
           </Grid>
           <footer className='text-center'>
