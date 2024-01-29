@@ -1,9 +1,9 @@
 import ReactPlayer from 'react-player'
-import { YOUTUBE_URL } from '../constants/links'
+import { YOUTUBE_URL } from '../../constants/links'
 
 import React, { useState } from 'react'
 import { Loader } from './Loader'
-import '../styles/components/youtubePlayer.scss'
+import '../../styles/components/UI/youtubePlayer.scss'
 
 const YoutubePlayer = ({ videoKey, isPlaying }) => {
   const [isVideoLoading, setIsVideoLoading] = useState(true)

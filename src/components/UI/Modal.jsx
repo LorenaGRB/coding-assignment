@@ -1,4 +1,4 @@
-import '../styles/components/modal.scss'
+import '../../styles/components/UI/modal.scss'
 
 const Modal = ({ children, isOpen, closeModal }) => {
   return (

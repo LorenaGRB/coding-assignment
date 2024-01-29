@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/components/noAvailable.scss'
+import '../../styles/components/UI/noAvailable.scss'
 
 function NoAvailable() {
   return (

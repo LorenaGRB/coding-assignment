@@ -4,7 +4,7 @@ import starredSlice from '../data/starredSlice'
 import Movie from '../components/Movie'
 import { HOME } from '../constants/routes'
 import '../styles/views/starred.scss'
-import Grid from '../components/Grid'
+import Grid from '../components/UI/Grid'
 
 const Starred = () => {
   const { starred } = useSelector((state) => state)

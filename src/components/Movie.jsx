@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import starredSlice from '../data/starredSlice'
 import watchLaterSlice from '../data/watchLaterSlice'
 import { IMAGE_URL } from '../constants/links'
-import Card from './Card'
+import Card from './UI/Card'
 import { useModal } from '../contexts/ModalContext'
 import '../styles/components/movie.scss'
 

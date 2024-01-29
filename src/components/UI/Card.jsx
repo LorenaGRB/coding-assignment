@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import placeholder from '../assets/not-found-500X750.jpeg'
-import '../styles/components/card.scss'
+import placeholder from '../../assets/not-found-500X750.jpeg'
+import '../../styles/components/UI/card.scss'
 
 const Card = ({ children, imageLink, title }) => {
   const [isOpen, setIsOpen] = useState('')
@@ -15,7 +15,7 @@ const Card = ({ children, imageLink, title }) => {
         <div className='card-body'>
           <div className='overlay' />
           <div className='info_panel'>{children}</div>
-          <img className='center-block' src={imageLink ?? placeholder} alt='Movie poster' />
+          <img className='center-block' src={imageLink ?? placeholder} alt={title} />
         </div>
         <h6 className='title mobile-card'>{title}</h6>
         <h6 className='title'>{title}</h6>

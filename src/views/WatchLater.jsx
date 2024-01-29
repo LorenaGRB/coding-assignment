@@ -4,7 +4,7 @@ import watchLaterSlice from '../data/watchLaterSlice'
 import Movie from '../components/Movie'
 import { HOME } from '../constants/routes'
 import { useCallback } from 'react'
-import Grid from '../components/Grid'
+import Grid from '../components/UI/Grid'
 import '../styles/views/watchLater.scss'
 
 const WatchLater = () => {

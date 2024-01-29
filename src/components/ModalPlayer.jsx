@@ -1,10 +1,10 @@
-import NoAvailable from './NoAvailable'
-import Modal from './Modal'
+import NoAvailable from './UI/NoAvailable'
+import Modal from './UI/Modal'
 import { useEffect, useState } from 'react'
 import { getMovieById } from '../api/movie'
 import { TRAILER } from '../constants/general'
 import { useModal } from '../contexts/ModalContext'
-import YoutubePlayer from './YoutubePlayer'
+import YoutubePlayer from './UI/YoutubePlayer'
 
 const ModalPlayer = () => {
   const { isModalOpen, modalInfo, closeModal } = useModal()

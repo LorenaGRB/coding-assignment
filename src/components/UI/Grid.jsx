@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/components/grid.scss'
+import '../../styles/components/UI/grid.scss'
 
 function Grid({ children }) {
   return <div className='grid-template'>{children}</div>
