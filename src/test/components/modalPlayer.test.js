@@ -1,11 +1,11 @@
-import { render, screen, waitFor } from '@testing-library/react'
-import ModalPlayer from '../components/ModalPlayer'
-import { useModal } from '../contexts/ModalContext'
-import { getMovieById } from '../api/movie'
+import { render, screen } from '@testing-library/react'
+import ModalPlayer from '../../components/ModalPlayer'
+import { useModal } from '../../contexts/ModalContext'
+import { getMovieById } from '../../api/movie'
 import { act } from 'react-dom/test-utils'
 
-jest.mock('../api/movie')
-jest.mock('../contexts/ModalContext')
+jest.mock('../../api/movie')
+jest.mock('../../contexts/ModalContext')
 
 describe('ModalPlayer', () => {
   it('renders YoutubePlayer when videoKey exists', async () => {
