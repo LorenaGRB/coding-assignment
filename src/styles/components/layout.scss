@@ -1,0 +1,19 @@
+@import '../variables.scss';
+
+.layout {
+  text-align: center;
+}
+
+.container {
+  padding-top: 100px;
+  color: $white;
+
+  @media (max-width: 720px) {
+    padding-top: 70px;
+  }
+
+  a {
+    color: $blue-100;
+    text-decoration: none;
+  }
+}

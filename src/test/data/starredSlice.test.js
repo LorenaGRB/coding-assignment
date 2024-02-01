@@ -1,0 +1,34 @@
+import starredSlice from '../../data/starredSlice'
+import { moviesMock } from '../utils/movies.mocks'
+
+describe('starredSlice test', () => {
+  const state = { starredMovies: [] }
+  const mock = moviesMock.results
+  it('should set an initial state', () => {
+    const initialState = state
+    const action = { type: '' }
+    const result = starredSlice.reducer(initialState, action)
+    expect(result).toEqual({ starredMovies: [] })
+  })
+
+  it('should add movie to starred', () => {
+    const initialState = { ...state, starredMovies: [] }
+    const action = starredSlice.actions.starMovie(mock[0])
+    const result = starredSlice.reducer(initialState, action)
+    expect(result.starredMovies[0]).toBe(mock[0])
+  })
+
+  it('should remove movie from starred', () => {
+    const initialState = { ...state, starredMovies: mock }
+    const action = starredSlice.actions.unstarMovie(mock[0])
+    const result = starredSlice.reducer(initialState, action)
+    expect(result.starredMovies[0]).toBe(mock[1])
+  })
+
+  it('should remove all movies', () => {
+    const initialState = { ...state, starredMovies: mock }
+    const action = starredSlice.actions.clearAllStarred(state)
+    const result = starredSlice.reducer(initialState, action)
+    expect(Object.keys(result.starredMovies).length).toEqual(0)
+  })
+})

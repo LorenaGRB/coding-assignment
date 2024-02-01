@@ -1,0 +1,15 @@
+@import '../variables.scss';
+
+.watch-later {
+  footer {
+    margin-top: 50px;
+
+    .btn {
+      width: auto;
+      padding: 0 20px;
+      font-size: 0.8rem;
+      background: $red-550;
+      border: none;
+    }
+  }
+}
